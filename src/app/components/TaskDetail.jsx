@@ -11,10 +11,10 @@ const TaskDetail = ({
 }) => (
   <div>
     <div>
-      <input value={task.name}>
+      <input value={task.name} />
     </div>
     <div>
-      <button>Complete / Reopen Task</button>
+      <button>{ isComplete ? 'Reopen' : 'Complete'}</button>
     </div>
     <div>
       <select>
@@ -31,7 +31,7 @@ const TaskDetail = ({
   </div>
 );
 
-const mapStateToProps = (state, ownProps) {
+const mapStateToProps = (state, ownProps) => {
   let id = ownProps.match.params.id;
   let task = state.tasks.find(task => task.id === id);
   let groups = state.groups;
