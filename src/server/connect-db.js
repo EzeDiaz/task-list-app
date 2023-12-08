@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb'
 
-const url = process.env.ORMONGO_URL || 'mongodb://localhost:27017/myorganizer';
+let url = process.env.ORMONGO_URL || 'mongodb://localhost:27017/myorganizer';
 let db = null;
 
 export async function connectDB() {
